@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of bookmarks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h3>Processors info</h3>
+
+<p th:text="'Localhost info - ' + ${currentHostInfo.host()} + ':' + ${currentHostInfo.port()}" />
+
+<div th:fragment="table" class="container">
+    <div class="container">
+        <div class="container-fluid">
+            <table border="1">
+                <thead>
+                <th>Host</th>
+                <th>Port</th>
+                </thead>
+                <tbody>
+                <tr th:each="hi : ${hostInfoList}">
+                    <td th:text="${hi.host()}"></td>
+                    <td th:text="${hi.port()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

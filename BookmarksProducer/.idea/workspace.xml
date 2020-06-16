@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5d96b753-870c-4182-8b9b-d8feac9f3acd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cP4t3kN1wfzOiQfCzJd70mzqfq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.140647" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
+  </component>
+  <component name="RunManager" selected="Application.BookmarkClientKafkaApplication (1)">
+    <configuration name="BookmarkClientKafkaApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jans.BookmarkClientKafkaApplication" />
+      <module name="bookmarkProducer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookmarkClientKafkaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jans.bookmarkClientKafka.BookmarkClientKafkaApplication" />
+      <module name="bookmarkProducer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jans.bookmarkClientKafka.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KafkastreamApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.pivotal.kafkastream.KafkastreamApplication" />
+      <module name="kafkastream" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.pivotal.kafkastream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="kafkastream" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="kafkastream" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="command" value="" />
+          <option name="containerName" value="bookmarksproducer" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="bookmarksproducer:latest" />
+          <option name="commandLineOptions" value="" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="buildOnly" value="true" />
+          <option name="command" value="" />
+          <option name="containerName" value="bookmarksproducer" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="bookmarksproducer" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BookmarkClientKafkaApplication (1)" />
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Application.BookmarkClientKafkaApplication" />
+        <item itemvalue="Application.KafkastreamApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="Containers" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5d96b753-870c-4182-8b9b-d8feac9f3acd" name="Default Changelist" comment="" />
+      <created>1590417105130</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590417105130</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="731" y="231" key="#Docker_Image" timestamp="1590662793982">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="731" y="231" key="#Docker_Image/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590662793982" />
+    <state x="731" y="153" key="#Dockerfile" timestamp="1590665421467">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="731" y="153" key="#Dockerfile/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590665421467" />
+    <state x="731" y="153" key="#Dockerfile/1792.136.1866.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590661678339" />
+    <state x="503" y="232" width="813" height="666" key="#Project_Structure" timestamp="1590562198616">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="503" y="232" width="813" height="666" key="#Project_Structure/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590562198616" />
+    <state x="775" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590665356387">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="775" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590665356387" />
+    <state width="1467" height="219" key="GridCell.Tab.0.bottom" timestamp="1591254955998">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="219" key="GridCell.Tab.0.bottom/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591254955998" />
+    <state width="1521" height="463" key="GridCell.Tab.0.bottom/1792.136.1856.1057/0.23.1792.1097@1792.136.1856.1057" timestamp="1590505095065" />
+    <state width="1467" height="219" key="GridCell.Tab.0.bottom/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591104202091" />
+    <state width="1467" height="219" key="GridCell.Tab.0.bottom/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591209983496" />
+    <state width="1467" height="219" key="GridCell.Tab.0.center" timestamp="1591254955998">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="219" key="GridCell.Tab.0.center/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591254955998" />
+    <state width="1521" height="463" key="GridCell.Tab.0.center/1792.136.1856.1057/0.23.1792.1097@1792.136.1856.1057" timestamp="1590505095065" />
+    <state width="1467" height="219" key="GridCell.Tab.0.center/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591104202091" />
+    <state width="1467" height="219" key="GridCell.Tab.0.center/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591209983495" />
+    <state width="1467" height="219" key="GridCell.Tab.0.left" timestamp="1591254955997">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="219" key="GridCell.Tab.0.left/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591254955997" />
+    <state width="1521" height="463" key="GridCell.Tab.0.left/1792.136.1856.1057/0.23.1792.1097@1792.136.1856.1057" timestamp="1590505095065" />
+    <state width="1467" height="219" key="GridCell.Tab.0.left/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591104202091" />
+    <state width="1467" height="219" key="GridCell.Tab.0.left/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591209983495" />
+    <state width="1467" height="219" key="GridCell.Tab.0.right" timestamp="1591254955998">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="219" key="GridCell.Tab.0.right/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591254955998" />
+    <state width="1521" height="463" key="GridCell.Tab.0.right/1792.136.1856.1057/0.23.1792.1097@1792.136.1856.1057" timestamp="1590505095065" />
+    <state width="1467" height="219" key="GridCell.Tab.0.right/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591104202091" />
+    <state width="1467" height="219" key="GridCell.Tab.0.right/1792.136.1864.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591209983496" />
+    <state width="1467" height="373" key="GridCell.Tab.1.bottom" timestamp="1591100160574">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="373" key="GridCell.Tab.1.bottom/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591100160574" />
+    <state width="1467" height="373" key="GridCell.Tab.1.center" timestamp="1591100160574">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="373" key="GridCell.Tab.1.center/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591100160574" />
+    <state width="1467" height="373" key="GridCell.Tab.1.left" timestamp="1591100160574">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="373" key="GridCell.Tab.1.left/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591100160574" />
+    <state width="1467" height="373" key="GridCell.Tab.1.right" timestamp="1591100160574">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="1467" height="373" key="GridCell.Tab.1.right/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1591100160574" />
+    <state x="539" y="210" key="SettingsEditor" timestamp="1590657979016">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="539" y="210" key="SettingsEditor/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590657979016" />
+    <state x="692" y="406" key="com.intellij.ide.util.TipDialog" timestamp="1590997003415">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="692" y="406" key="com.intellij.ide.util.TipDialog/1792.136.1856.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590997003415" />
+    <state x="692" y="406" key="com.intellij.ide.util.TipDialog/1792.136.1859.1057/0.23.1792.1097@0.23.1792.1097" timestamp="1590657798816" />
+  </component>
+</project>

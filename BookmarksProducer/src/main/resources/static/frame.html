@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Bookmarks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+Bookmarks UI service is running...
+<br>
+<iframe src="http://localhost:8080/bookmarks" style="border:none;" id="iframe_a"></iframe>
+<br>
+<iframe src="http://localhost:8899/" style="border:none;" id="iframe_b"></iframe>
+
+
+<p id="demo"></p>
+<button onclick="reloadParentPage()">Reload</button>
+
+
+<script>
+function reloadParentPage() {
+    var selfUrl = unescape(parent.window.location.pathname);
+    parent.location.reload(true);
+
+    parent.window.location.replace(selfUrl);
+
+    parent.window.location.href = selfUrl;
+}
+</script>
+
+</body>
+</html>
