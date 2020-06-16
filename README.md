@@ -70,9 +70,9 @@ docker image push griga/bookmarksproxy
 kubectl apply -f bookmarksProxy_deploy.yml
 ```
 
-### Run URLs in Browser
+## Run URLs in Browser
 
-#### REST URL
+### REST URL
 http://consumer.localhost/currentHost
 http://consumer.localhost/keyHost/janGoogle
 
@@ -80,7 +80,7 @@ http://consumer.localhost/bookmarks/jan
 http://consumer.localhost/getOneBookmark/janGoogle
 http://proxy.localhost/getOneBookmark/janGoogle
 
-#### WEB URL
+### WEB URL
 http://consumer.localhost/processors
 http://consumer.localhost/bookmarksConsumer/jan
 http://consumer.localhost/bookmarksConsumerAll/jan
@@ -97,7 +97,7 @@ curl bookmarksConsumer:8888/currentHost
 curl 10.1.0.249:8888/currentHost
 ```
 
-### Delete deployments and topics
+## Delete deployments and topics
 Delete deployments from Kubernetes
 ```
 kubectl delete deployment bookmarksconsumer
