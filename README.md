@@ -1,4 +1,4 @@
-# bookmarksDemo
+# Bookmarks Demo
 Jan's Event Streaming Microservices Demo
 
 ## Requirements
