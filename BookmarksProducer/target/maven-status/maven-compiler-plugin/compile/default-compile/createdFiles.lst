@@ -1,6 +1,0 @@
-jans/web/BookmarksClientController.class
-jans/model/Bookmark.class
-jans/service/BookmarksStreams.class
-jans/service/StreamsConfig.class
-jans/BookmarkClientKafkaApplication.class
-jans/service/BookmarksService.class
