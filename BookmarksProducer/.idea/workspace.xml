@@ -28,6 +28,11 @@
     <property name="project.structure.side.proportion" value="0.140647" />
     <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.BookmarkClientKafkaApplication (1)">
     <configuration name="BookmarkClientKafkaApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jans.BookmarkClientKafkaApplication" />
