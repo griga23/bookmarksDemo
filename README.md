@@ -1,6 +1,10 @@
 # Bookmarks Demo
 Jan's Event Streaming Microservices Demo
 
+![Application Architecture](/arch.png)
+
+![Application View](/app.png)
+
 ## Requirements
   * Kubernetes
   * Helm
