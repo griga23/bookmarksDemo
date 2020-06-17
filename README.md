@@ -73,16 +73,25 @@ kubectl apply -f bookmarksProxy_deploy.yml
 ## Run URLs in Browser
 
 ### REST URL
+Get host IP of the current Pod
 http://consumer.localhost/currentHost
+Get host IP of the key store for some key
 http://consumer.localhost/keyHost/janGoogle
-
+Get all values for some user from the current Pod
 http://consumer.localhost/bookmarks/jan
+
+Get value of some key from the current Pod
 http://consumer.localhost/getOneBookmark/janGoogle
+Get value of some key. Proxy will redirect to the correct Pod automatically
 http://proxy.localhost/getOneBookmark/janGoogle
 
 ### WEB URL
+Get all currently available State Store IPs
 http://consumer.localhost/processors
+
+Get bookmarks for some user from the current Pod
 http://consumer.localhost/bookmarksConsumer/jan
+Get bookmarks for some user from all Pods
 http://consumer.localhost/bookmarksConsumerAll/jan
 
 
