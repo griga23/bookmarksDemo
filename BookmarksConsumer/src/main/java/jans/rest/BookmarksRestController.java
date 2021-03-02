@@ -28,6 +28,7 @@ public class BookmarksRestController {
 
     ReadOnlyKeyValueStore<String, Bookmark> keyValueStore;
 
+    // rest get call to return all bookmarks stored in local state store for some specific user
     @GetMapping("/bookmarks/{user}")
     public List<Bookmark>  getLocalUserBookmarks(@PathVariable String user) {
 
@@ -46,6 +47,7 @@ public class BookmarksRestController {
         return bookmarks;
     }
 
+    // rest get call to return one bookmark for some specific key
     @GetMapping("/getOneBookmark/{key}")
     public Bookmark  getOneBookmark(@PathVariable String key) {
 
@@ -55,6 +57,7 @@ public class BookmarksRestController {
         return bookmark;
     }
 
+    // rest get call to return current host of the microservice
     @GetMapping("/currentHost")
     public String showProcessors(Model uiModel) {
 
@@ -62,6 +65,7 @@ public class BookmarksRestController {
         return currentHostInfo.toString();
     }
 
+    // rest get call to return host ip address where some specific key is located
     @GetMapping("/keyHost/{key}")
     public String getHost(@PathVariable String key, Model uiModel) {
 

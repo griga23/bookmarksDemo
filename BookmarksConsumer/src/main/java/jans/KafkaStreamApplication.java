@@ -19,7 +19,7 @@ import java.util.function.Function;
 @SpringBootApplication
 public class KafkaStreamApplication {
 
-	public static String STORE_NAME="jans-k8s-store";
+	public static String STORE_NAME="store";
 
 	public static void main(String[] args) {
 		SpringApplication.run(KafkaStreamApplication.class, args);
