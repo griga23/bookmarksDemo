@@ -1,122 +1,88 @@
-# Bookmarks Demo
-Jan's Event Streaming Microservices Demo
+# Building Microservices with Apache Kafka as Service in Cloud
 
-![Application Architecture](/arch.png)
+Demo application to demonstrate building microservices using Springboot and Apache Kafka. Application is a simple Bookmarks manager. It allows you to:
+* Create a new bookmark
+* Update a bookmark 
+* Delete a bookmark
+* All bookmarks are stored with some username
+* Read list of bookmarks for some user
 
-![Application View](/app.png)
+![Application User Interface](appUI.png)
 
-## Requirements
-  * Kubernetes
-  * Helm
-  * Java 11 with Maven
-  * Docker
+This demo consist of two microservices which are using Java Springboot:
+* Bookmarks Producer - is used to send messages to Kafka
+* Bookmarks  Consumer - is used to retrieving messages from Kafka and storing them in local  state store. 
 
-## Install Components
+Demo Application architecture
+![Architecture](architecture.png)
 
-### Confluent Platform with Helm
-Install Kafka to Kubernetes using Helm charts
+## Requirements to run it locally:
+* Java 8
+* Maven
+* Connectivity to Confluent Cloud
+
+## Create topics in Confluent Cloud
+You need to create following 3 topics. Please use multiple partitons to demonstrate Microservices scaling. I usually use 6 partitions in my demo.
 ```
-helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/ 
-helm repo update 
-helm install my-confluent-oss confluentinc/cp-helm-charts
+bookmarks
+bookmarks-store-repartition
+bookmarks-store-changelog 
 ```
-TEST IT: kubectl port-forward deploy/my-confluent-oss-cp-control-center 9021:9021
-Now Control Center should be here http://localhost:9021/
+* create topic "bookmarks" in Confluent Cloud. For future scaling purposes I recommend to create a topic with 3 or more partitions. This is a topic that will store all incoming bookmarks events.
+* create topics "bookmarks-store-repartition" and "bookmarks-store-changelog" in Confluent Cloud. These topics will be used by Kafka Streams. These topics must have the same number of partitions as your "bookmarks" topic.
 
-### Install Nginx Ingress service
-```
-helm install my-nginx stable/nginx-ingress
-```
-TEST IT: kubectl --namespace ingress get all
-This should show you all deployed ingress services.
-
-### Configure Kafka
-
-#### Create Bookmarks topic
-Create a topic by executing command in kafka docker container
-```
-kubectl exec -c cp-kafka-broker -it my-confluent-oss-cp-kafka-0 -- /bin/bash /usr/bin/kafka-topics --zookeeper my-confluent-oss-cp-zookeeper:2181 --topic bookmarks --create --partitions 4 --replication-factor 3
-```
-TEST IT: kubectl exec -c cp-kafka-broker -it my-confluent-oss-cp-kafka-0 -- /bin/bash /usr/bin/kafka-topics --zookeeper my-confluent-oss-cp-zookeeper:2181 --list
-You should see list of topics
-
-### Deploy Microservices to Kubernetes
-There are three microservices:
-  * Bookmarks Producer
-  * Bookmarks Consumer
-  * Bookmarks Gateway (optional)
-
-
-#### Install Bookmarks microservices
-
-Compile and deploy Bookmarks Producer from its directory
-```
-mvn install -Dmaven.test.skip=true
-docker build -t griga/bookmarksproducer .
-docker image push griga/bookmarksproducer
-kubectl apply -f bookmarksProducer_deploy.yml
-```
-TEST IT: http://producer.localhost/bookmarksProducer/jan
-
-Compile and deploy Bookmarks Consumer from its directory
-```
-mvn install -Dmaven.test.skip=true
-docker build -t griga/bookmarksconsumer .
-docker image push griga/bookmarksconsumer
-kubectl apply -f bookmarksConsumer_deploy.yml
+## Start the Producer
+Start the Producer microservices with your properties file
+```bash
+cd BookmarksProducer
+mvn spring-boot:run -Dspring.config.location=application.properties
 ```
 
-Compile and deploy Bookmarks Proxy Gateway from its directory
+## Test the Producer
+Open your favorite browser and enter following url (assuming you have not changed the port 8080 in your properties file)
 ```
-mvn install -Dmaven.test.skip=true
-docker build -t griga/bookmarksproxy .
-docker image push griga/bookmarksproxy
-kubectl apply -f bookmarksProxy_deploy.yml
+http://localhost:8080/bookmarksProducer/jan
+```
+Congrats you are logged in as a user "jan". You can change the name to anything you want. Bookmark events will be stored in the bookmarks topic in Kafka using this key! This means that all bookmark events from the same user will use the same partition.
+
+## Start the Consumer
+Start the Consumer microservices with your properties file
+```bash
+cd BookmarksConsumer
+mvn spring-boot:run -Dspring.config.location=application.properties
 ```
 
-## Run URLs in Browser
+## Test the Consumer
+Open your favorite browser and enter following url (assuming you have not changed the port 8090 in your properties file)
+```
+http://localhost:8090/bookmarksConsumer/jan
+```
+Congrats you are logged in as a user "jan". Now you can view all the bookmarks that were stored as a user "jan". Change the name to be able to see bookmarks from some other users (if they exist).
 
-### REST URL
+### Additional REST URL commands
   * Get host IP of the current Pod
-http://consumer.localhost/currentHost
+http://localhost:8090/currentHost
   * Get host IP of the key store for some key
-http://consumer.localhost/keyHost/janGoogle
+http://localhost:8090/keyHost/janGoogle
   * Get all values for some user from the current Pod
-http://consumer.localhost/bookmarks/jan
-
+http://localhost:8090/bookmarks/jan
   * Get value of some key from the current Pod
-http://consumer.localhost/getOneBookmark/janGoogle
+http://localhost:8090/getOneBookmark/janGoogle
+
+### Additional WEB URL commands 
+  * Get all currently available State Store IPs
+http://localhost:8090/processors
+  * Get bookmarks for some user from the current Pod
+http://localhost:8090/bookmarksConsumer/jan
+  * Get bookmarks for some user from all Pods
+http://localhost:8090/bookmarksConsumerAll/jan
+
+### Proxy Microservice REST command
   * Get value of some key. Proxy will redirect to the correct Pod automatically
 http://proxy.localhost/getOneBookmark/janGoogle
 
-### WEB URL
-  * Get all currently available State Store IPs
-http://consumer.localhost/processors
-
-  * Get bookmarks for some user from the current Pod
-http://consumer.localhost/bookmarksConsumer/jan
-  * Get bookmarks for some user from all Pods
-http://consumer.localhost/bookmarksConsumerAll/jan
+## Stop the demo showcase
+Hit Control+C to stop any microservice.
 
 
-### Inspect
-Inspect containers for debugging
-```
-kubectl exec -c cp-kafka-broker -it my-confluent-oss-cp-kafka-0 -- /bin/bash
-```
-Run curl inside the container
-```
-curl bookmarksConsumer:8888/currentHost
-curl 10.1.0.249:8888/currentHost
-```
 
-## Delete deployments and topics
-Delete deployments from Kubernetes
-```
-kubectl delete deployment bookmarksconsumer
-kubectl delete deployment bookmarksproducer
-```
-Delete topic from Kafka
-```
-kubectl exec -c cp-kafka-broker -it my-confluent-oss-cp-kafka-0 -- /bin/bash /usr/bin/kafka-topics --zookeeper my-confluent-oss-cp-zookeeper:2181 --topic bookmarks --delete
-```
