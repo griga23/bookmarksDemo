@@ -40,9 +40,9 @@ mvn spring-boot:run -Dspring.config.location=application.properties
 
 ## Test the Producer
 Open your favorite browser and enter following url (assuming you have not changed the port 8080 in your properties file)
-```
+
 http://localhost:8080/bookmarksProducer/jan
-```
+
 Congrats you are logged in as a user "jan". You can change the name to anything you want. Bookmark events will be stored in the bookmarks topic in Kafka using this key! This means that all bookmark events from the same user will use the same partition.
 
 ## Start the Consumer
@@ -54,10 +54,20 @@ mvn spring-boot:run -Dspring.config.location=application.properties
 
 ## Test the Consumer
 Open your favorite browser and enter following url (assuming you have not changed the port 8090 in your properties file)
-```
+
 http://localhost:8090/bookmarksConsumer/jan
-```
+
 Congrats you are logged in as a user "jan". Now you can view all the bookmarks that were stored as a user "jan". Change the name to be able to see bookmarks from some other users (if they exist).
+
+### All WEB URL commands 
+  * Publish new bookermakrs for some user
+http://localhost:8080/bookmarksProducer/jan  
+  * Get all currently available State Store IPs
+http://localhost:8090/processors
+  * Get bookmarks for some user from the current Pod
+http://localhost:8090/bookmarksConsumer/jan
+  * Get bookmarks for some user from all Pods
+http://localhost:8090/bookmarksConsumerAll/jan
 
 ### Additional REST URL commands
   * Get host IP of the current Pod
@@ -69,13 +79,8 @@ http://localhost:8090/bookmarks/jan
   * Get value of some key from the current Pod
 http://localhost:8090/getOneBookmark/janGoogle
 
-### Additional WEB URL commands 
-  * Get all currently available State Store IPs
-http://localhost:8090/processors
-  * Get bookmarks for some user from the current Pod
-http://localhost:8090/bookmarksConsumer/jan
-  * Get bookmarks for some user from all Pods
-http://localhost:8090/bookmarksConsumerAll/jan
+## Proxy Microservice
+This microservice can be deployed to help to redirect to proper Consumer microservice which stores date for some key
 
 ### Proxy Microservice REST command
   * Get value of some key. Proxy will redirect to the correct Pod automatically
