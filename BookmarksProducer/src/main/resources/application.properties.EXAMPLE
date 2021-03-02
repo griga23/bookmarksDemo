@@ -1,0 +1,13 @@
+# Local port to run Producer Tomcat
+server.port=8080
+
+# Connection to Confluent Cloud
+spring.cloud.stream.kafka.binder.brokers=
+spring.cloud.stream.kafka.binder.configuration.security.protocol=SASL_SSL
+spring.cloud.stream.kafka.binder.configuration.sasl.mechanism=PLAIN
+spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config=
+spring.cloud.stream.kafka.binder.configuration.ssl.endpoint.identification.algorithm=https
+
+# Topic to use in Confluent Cloud to store incoming bookmarks events
+spring.cloud.stream.bindings.output.destination=bookmarks
+spring.cloud.stream.bindings.output.contentType=application/json
