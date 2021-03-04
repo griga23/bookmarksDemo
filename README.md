@@ -59,6 +59,8 @@ http://localhost:8090/bookmarksConsumer/jan
 
 Congrats you are logged in as a user "jan". Now you can view all the bookmarks that were stored as a user "jan". Change the name to be able to see bookmarks from some other users (if they exist).
 
+## All Commands
+
 ### All WEB URL commands 
   * Publish new bookermakrs for some user
 http://localhost:8080/bookmarksProducer/jan  
