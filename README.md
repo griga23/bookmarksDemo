@@ -62,21 +62,21 @@ Congrats you are logged in as a user "jan". Now you can view all the bookmarks t
 ### All WEB URL commands 
   * Publish new bookermakrs for some user
 http://localhost:8080/bookmarksProducer/jan  
-  * Get all currently available State Store IPs
-http://localhost:8090/processors
-  * Get bookmarks for some user from the current Pod
+  * Get bookmarks for some user from the current container
 http://localhost:8090/bookmarksConsumer/jan
-  * Get bookmarks for some user from all Pods
+  * Get bookmarks for some user from all containers
 http://localhost:8090/bookmarksConsumerAll/jan
+  * Get all currently available State Store containers
+http://localhost:8090/processors
 
 ### Additional REST URL commands
-  * Get host IP of the current Pod
+  * Get host IP of the current container
 http://localhost:8090/currentHost
+  * Get all values for some user from the current container
+http://localhost:8090/bookmarks/jan
   * Get host IP of the key store for some key
 http://localhost:8090/keyHost/janGoogle
-  * Get all values for some user from the current Pod
-http://localhost:8090/bookmarks/jan
-  * Get value of some key from the current Pod
+  * Get value of some key from the current container
 http://localhost:8090/getOneBookmark/janGoogle
 
 ## Proxy Microservice
