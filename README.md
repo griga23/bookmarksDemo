@@ -22,14 +22,12 @@ Demo Application architecture
 * Connection to Kafka Cluster
 
 ## Create topics in your Kafka cluster
-You need to create following 3 topics. Please use multiple partitons to demonstrate Microservices scaling. I usually use 6 partitions in my demo.
+You need to create following 3 topics. Please use multiple partitons to demonstrate Microservices scaling. I usually use 3 partitions or more.
 ```
 bookmarks
 bookmarks-store-repartition
 bookmarks-store-changelog 
 ```
-* create topic "bookmarks" in your Kafka cluster. For future scaling purposes I recommend to create a topic with 3 or more partitions. This is a topic that will store all incoming bookmarks events.
-* create topics "bookmarks-store-repartition" and "bookmarks-store-changelog" in your Kafka cluster. These topics will be used by Kafka Streams. These topics must have the same number of partitions as your "bookmarks" topic.
 
 ## Config application.properties for Producer and Consumer
 Create two application properties file.
