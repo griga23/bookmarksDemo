@@ -2,12 +2,14 @@
 server.port=8080
 
 # Connection to Confluent Cloud
-spring.cloud.stream.kafka.binder.brokers=
+spring.cloud.stream.kafka.binder.brokers=.confluent.cloud:9092
 spring.cloud.stream.kafka.binder.configuration.security.protocol=SASL_SSL
 spring.cloud.stream.kafka.binder.configuration.sasl.mechanism=PLAIN
-spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config=
+spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule   required username=""   password="";
 spring.cloud.stream.kafka.binder.configuration.ssl.endpoint.identification.algorithm=https
 
+
 # Topic to use in Confluent Cloud to store incoming bookmarks events
-spring.cloud.stream.bindings.output.destination=bookmarks
+spring.cloud.stream.source=output
+spring.cloud.stream.bindings.output-out-0.destination=bookmarks
 spring.cloud.stream.bindings.output.contentType=application/json
