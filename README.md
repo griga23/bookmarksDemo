@@ -82,7 +82,7 @@ spring.cloud.stream.kafka.streams.binder.configuration.commit.interval.ms=1000
 Start the Producer microservices with your properties file
 ```bash
 cd BookmarksProducer
-mvn spring-boot:run -Dspring.config.location=application.properties
+mvn spring-boot:run
 ```
 
 ## Test the Producer
@@ -96,7 +96,7 @@ Congrats you are logged in as a user "jan". You can change the name to anything 
 Start the Consumer microservices with your properties file
 ```bash
 cd BookmarksConsumer
-mvn spring-boot:run -Dspring.config.location=application.properties
+mvn spring-boot:run
 ```
 
 ## Test the Consumer
