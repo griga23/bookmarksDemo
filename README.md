@@ -33,6 +33,7 @@ bookmarks-store-changelog
 
 ## Config application.properties for Producer and Consumer
 Create two application properties file.
+
 Example for Bookmarks Producer
 ```
 # Local port to run Producer Tomcat
