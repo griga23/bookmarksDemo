@@ -36,8 +36,9 @@ public class KafkaStreamApplication {
 					.reduce(
 							(aggValue, newValue)-> {
 								if (newValue.getAction().matches("SAVE"))
-									if (!newValue.getUrl().equals(aggValue.getUrl())){
-										//return new bookmark
+									//check if URL was created or modified
+									if (aggValue.getUrl()!=null && !newValue.getUrl().toString().equals(aggValue.getUrl().toString())){
+										//save new or modified bookmark in state store
 										return newValue;
 									}
 									//return current bookmark

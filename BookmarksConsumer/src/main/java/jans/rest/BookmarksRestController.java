@@ -70,7 +70,7 @@ public class BookmarksRestController {
     public String getHost(@PathVariable String key, Model uiModel) {
 
         HostInfo hostInfo = queryService.getHostInfo(STORE_NAME, key, Serdes.String().serializer());
-        return hostInfo.host();
+        return hostInfo.host()+":"+hostInfo.port();
     }
 
 }
