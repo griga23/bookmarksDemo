@@ -39,7 +39,7 @@ Example for Bookmarks Producer
 # Local port to run Producer Tomcat
 server.port=8080
 
-# Connection to Confluent Cloud
+# Kafka connection settings
 spring.cloud.stream.kafka.binder.brokers=
 spring.cloud.stream.kafka.binder.configuration.security.protocol=SASL_SSL
 spring.cloud.stream.kafka.binder.configuration.sasl.mechanism=PLAIN
@@ -47,7 +47,7 @@ spring.cloud.stream.kafka.binder.configuration.sasl.jaas.config=org.apache.kafka
 spring.cloud.stream.kafka.binder.configuration.ssl.endpoint.identification.algorithm=https
 
 
-# Topic to use in Confluent Cloud to store incoming bookmarks events
+# Topic to use in Kafka cluster to store incoming bookmarks events
 spring.cloud.stream.source=output
 spring.cloud.stream.bindings.output-out-0.destination=bookmarks
 spring.cloud.stream.bindings.output.contentType=application/json
