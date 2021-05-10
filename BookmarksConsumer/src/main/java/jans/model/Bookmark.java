@@ -76,4 +76,12 @@ public class Bookmark {
         this.action = action;
     }
 
+    public boolean equalsURL(Object o) {
+        if (this.getUrl()== null) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bookmark bookmark = (Bookmark) o;
+        if (bookmark.getUrl() == null) return false;
+        return (bookmark.getUrl().getHost().matches(url.getHost())&&
+                bookmark.getUrl().getProtocol().matches(url.getProtocol()));
+    }
 }

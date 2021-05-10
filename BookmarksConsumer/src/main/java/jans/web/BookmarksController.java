@@ -2,7 +2,6 @@ package jans.web;
 
 import jans.KafkaStreamApplication;
 import jans.model.Bookmark;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.state.HostInfo;
 import org.apache.kafka.streams.state.KeyValueIterator;
@@ -26,12 +25,12 @@ import java.util.List;
 @Controller
 public class BookmarksController {
 
+    //local store name
     private static final String STORE_NAME = KafkaStreamApplication.STORE_NAME;
+    ReadOnlyKeyValueStore<String, Bookmark> keyValueStore;
 
     @Autowired
     private InteractiveQueryService queryService;
-
-    ReadOnlyKeyValueStore<String, Bookmark> keyValueStore;
 
     // query the local state store and return bookmarks for some user
     @RequestMapping(value = "/bookmarksConsumer/{user}", method = RequestMethod.GET)
@@ -52,6 +51,7 @@ public class BookmarksController {
         // add them to UI model
         uiModel.addAttribute("currentHostInfo", queryService.getCurrentHostInfo());
         uiModel.addAttribute("bookmarks", bookmarks);
+        uiModel.addAttribute("user", user);
         return "bookmarksConsumer";
     }
 
@@ -60,8 +60,7 @@ public class BookmarksController {
     public String showAllBookmarks(@PathVariable String user, Model uiModel) {
 
         //get all remote state stores
-        List<HostInfo> hostInfoList = new LinkedList<>();
-        hostInfoList = queryService.getAllHostsInfo(STORE_NAME);
+        List<HostInfo> hostInfoList = queryService.getAllHostsInfo(STORE_NAME);
 
         RestTemplate restTemplate = new RestTemplate();
         List<Bookmark> bookmarks = new ArrayList<>();
@@ -78,6 +77,7 @@ public class BookmarksController {
         // add them to UI model
         uiModel.addAttribute("currentHostInfo", queryService.getCurrentHostInfo());
         uiModel.addAttribute("bookmarks", bookmarks);
+        uiModel.addAttribute("user", user);
         return "bookmarksConsumer";
     }
 

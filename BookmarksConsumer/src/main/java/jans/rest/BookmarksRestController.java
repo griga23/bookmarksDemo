@@ -3,9 +3,7 @@ package jans.rest;
 import jans.KafkaStreamApplication;
 import jans.model.Bookmark;
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.streams.KeyValue;
-import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.state.HostInfo;
 import org.apache.kafka.streams.state.KeyValueIterator;
 import org.apache.kafka.streams.state.QueryableStoreTypes;
@@ -13,20 +11,22 @@ import org.apache.kafka.streams.state.ReadOnlyKeyValueStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.binder.kafka.streams.InteractiveQueryService;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @RestController
 public class BookmarksRestController {
+
+    //local store name
     private static final String STORE_NAME = KafkaStreamApplication.STORE_NAME;
+    ReadOnlyKeyValueStore<String, Bookmark> keyValueStore;
 
     @Autowired
     private InteractiveQueryService queryService;
-
-    ReadOnlyKeyValueStore<String, Bookmark> keyValueStore;
 
     // rest get call to return all bookmarks stored in local state store for some specific user
     @GetMapping("/bookmarks/{user}")
