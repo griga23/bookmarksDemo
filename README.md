@@ -32,6 +32,7 @@ bookmarks-store-changelog
 * create topics "bookmarks-store-repartition" and "bookmarks-store-changelog" in your Kafka cluster. These topics will be used by Kafka Streams. These topics must have the same number of partitions as your "bookmarks" topic.
 
 ## Config application.properties for Producer and Consumer
+Create two application properties file and store them in directory src/main/resources/
 
 Example for Bookmarks Producer
 ```
