@@ -32,7 +32,7 @@ bookmarks-store-changelog
 ## Config application.properties for Producer and Consumer
 Create two application properties file.
 
-Example for Bookmarks Producer
+Example for Bookmarks Producer [application.properties](BookmarksProducer/src/main/resources/application.properties)
 ```
 # Local port to run Producer Tomcat
 server.port=8080
@@ -51,7 +51,7 @@ spring.cloud.stream.bindings.output-out-0.destination=bookmarks
 spring.cloud.stream.bindings.output.contentType=application/json
 ```
 
-Example for Bookmarks Consumer
+Example for Bookmarks Consumer [application.properties](BookmarksConsumer/src/main/resources/application.properties)
 ```
 # application name and port where the application Tomcat will be running
 spring.application.name=kafkastream
