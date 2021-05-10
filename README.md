@@ -30,7 +30,7 @@ bookmarks-store-changelog
 ```
 
 ## Config application.properties for Producer and Consumer
-Create two application properties file.
+Add your Kafka connection settings to following two application properties file.
 
 Example for Bookmarks Producer [application.properties](BookmarksProducer/src/main/resources/application.properties)
 ```
