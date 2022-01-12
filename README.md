@@ -1,5 +1,7 @@
 # Building Microservices with Apache Kafka and Spring Cloud Services
 
+**Note:** Recorded session which explains the application architecture and shows how it works: https://videos.confluent.io/watch/yDu442Ktqgikzntye3NHSh
+
 Demo application to demonstrate building microservices using Spring Boot and Apache Kafka. Application is a simple Bookmarks manager. It allows you to:
 * Create a new bookmark
 * Update a bookmark 
