@@ -121,16 +121,17 @@ http://localhost:8090/bookmarksConsumerAll/jan
 http://localhost:8090/processors
 
 ### Additional REST URL commands
-  * Get host IP of the current container
-http://localhost:8090/currentHost
-  * Get all values for some user from the current container
+  * Get all values for some user from the current host
 http://localhost:8090/bookmarks/jan
+  * Get value of some key from the current host
+http://localhost:8090/getOneBookmark/janGoogle
   * Get host IP of the key store for some key
 http://localhost:8090/keyHost/janGoogle
   * Get metadata for some key
 http://localhost:8090/keyMeta/janGoogle
-  * Get value of some key from the current host
-http://localhost:8090/getOneBookmark/janGoogle
+  * Get host IP of the current container
+http://localhost:8090/currentHost
+
 
 ## Proxy Microservice
 This microservice can be deployed to help to redirect to proper Consumer microservice which stores date for some key
