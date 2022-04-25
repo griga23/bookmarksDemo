@@ -127,7 +127,9 @@ http://localhost:8090/currentHost
 http://localhost:8090/bookmarks/jan
   * Get host IP of the key store for some key
 http://localhost:8090/keyHost/janGoogle
-  * Get value of some key from the current container
+  * Get metadata for some key
+http://localhost:8090/keyMeta/janGoogle
+  * Get value of some key from the current host
 http://localhost:8090/getOneBookmark/janGoogle
 
 ## Proxy Microservice
